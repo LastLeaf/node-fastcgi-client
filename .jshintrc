@@ -1,0 +1,19 @@
+{
+	"eqeqeq": true,
+	"freeze": true,
+	"immed": true,
+	"mocha": true,
+	"nocomma": true,
+	"noarg": true,
+	"nonbsp": true,
+	"nonew": true,
+	"undef": true,
+	"strict": true,
+	"globalstrict": true,
+	"shadow": true,
+	"browser": true,
+	"node": true,
+	"predef": [
+		"fw"
+	]
+}

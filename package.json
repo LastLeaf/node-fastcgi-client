@@ -1,0 +1,18 @@
+{
+	"name": "node-fastcgi-client",
+	"description": "A FastCGI client implementation in Node.js, mainly designed for cummunication with PHP.",
+	"version": "0.0.1",
+	"private": true,
+	"engines": {
+		"node": "^4.0.0"
+	},
+	"dependencies": {},
+	"devDependencies": {
+		"mocha": "^2.3.3",
+		"istanbul": "~0.3.21"
+	},
+	"scripts": {
+		"test": "sudo mocha",
+		"coverage": "sudo istanbul cover _mocha -- -R spec"
+	}
+}
