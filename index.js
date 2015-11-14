@@ -2,5 +2,5 @@
 
 module.exports = function(options){
 	options = options || {};
-	require('./lib/main.js')(options);
+	return require('./lib/main.js')(options);
 };
