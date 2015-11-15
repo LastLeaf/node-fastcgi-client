@@ -27,6 +27,7 @@ The `request` object:
 * `request.stdin` The writable stdin stream.
 * `request.stdout` The readable stdout stream.
 * `request.stderr` The readable stderr stream.
+* `request.getExitStatus()` Return exit code, or an error if not normally ended. It would be ready before the `end` events of stdout and stderr streams.
 
 # test
 
