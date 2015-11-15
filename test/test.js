@@ -9,25 +9,25 @@ var fcgiClient = require('../index');
 
 var phpProc = null;
 
-describe('start php server and test connection', function(){
-	before(function(done){
+describe('Try connect to 127.0.0.1:9000 as FastCGI server', function(){
+	/*before(function(done){
 		phpProc = childProcess.spawn('php-cgi', ['-b', '127.0.0.1:9900'], {stdio: 'ignore'});
 		phpProc.on('error', function(err){
 			assert.ifError(err);
 		});
 		setTimeout(done, 1000);
-	});
-	it('Connect', function(done){
+	});*/
+	it('Connect and disconnect', function(done){
 		var client = fcgiClient({
 			host: '127.0.0.1',
-			port: 9900
+			port: 9000
 		});
-		client.on('connect', done);
+		client.on('ready', done);
 	});
-	after(function(done){
+	/*after(function(done){
 		phpProc.kill();
 		done();
-	});
+	});*/
 });
 
 cases.forEach(function(file){

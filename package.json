@@ -1,8 +1,9 @@
 {
 	"name": "node-fastcgi-client",
 	"description": "A FastCGI client implementation in Node.js, mainly designed for cummunication with PHP.",
+	"author": "LastLeaf <bqfu@163.com>",
+	"license": "MIT",
 	"version": "0.0.1",
-	"private": true,
 	"engines": {
 		"node": "^4.0.0"
 	},
