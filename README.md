@@ -2,6 +2,10 @@
 
 A FastCGI client implementation in Node.js, mainly designed for cummunication with PHP.
 
+# Development Status
+
+Developing. Would be stable soon.
+
 # API
 
 `npm install node-fastcgi-client`. Use `require('node-fastcgi-client')` to get a `fastcgiConnector`.
@@ -33,7 +37,7 @@ The `request` object:
 
 You should have PHP-CGI installed and PHP5 FPM service running in 127.0.0.1:9000.
 
-Then use `mocha` to test.
+Then use `npm test` to test. Use `npm run coverage` to see the test coverage.
 
 # LICENSE
 

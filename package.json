@@ -2,8 +2,10 @@
 	"name": "node-fastcgi-client",
 	"description": "A FastCGI client implementation in Node.js, mainly designed for cummunication with PHP.",
 	"author": "LastLeaf <bqfu@163.com>",
+	"repository": "git@github.com/LastLeaf/node-fastcgi-client.git",
+	"homepage": "https://github.com/LastLeaf/node-fastcgi-client",
 	"license": "MIT",
-	"version": "0.0.1",
+	"version": "0.0.1-alpha.1",
 	"engines": {
 		"node": "^4.0.0"
 	},
@@ -13,7 +15,7 @@
 		"istanbul": "~0.3.21"
 	},
 	"scripts": {
-		"test": "sudo mocha",
-		"coverage": "sudo istanbul cover _mocha -- -R spec"
+		"test": "node_modules/.bin/mocha",
+		"coverage": "node_modules/.bin/istanbul cover node_modules/.bin/_mocha -- -R spec"
 	}
 }
