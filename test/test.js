@@ -26,38 +26,43 @@ describe('Connect to 127.0.0.1:9000 as FastCGI server', function(){
 		client.on('ready', done);
 	});
 
-	it('Send empty request.', function(done){
+	it('Execute PHP helloworld', function(done){
 		var client = fcgiClient({
 			host: '127.0.0.1',
 			port: 9000
 		});
 		client.on('ready', function(){
 			client.request({
-				QUERY_STRING: '/',
+				QUERY_STRING: '',
 				REQUEST_METHOD: 'GET',
-				CONTENT_TYPE: 'text/plain',
-				CONTENT_LENGTH: 0,
-				SCRIPT_FILENAME: '/tmp/a.php',
-				SCRIPT_NAME: 'a.php',
-				REQUEST_URI: '/tmp/a.php',
-				DOCUMENT_URI: '/tmp/a.php',
+				CONTENT_TYPE: '',
+				CONTENT_LENGTH: '',
+				SCRIPT_FILENAME: __dirname + '/www/helloworld.php',
+				SCRIPT_NAME: '/helloworld.php',
+				REQUEST_URI: '/helloworld.php',
+				DOCUMENT_URI: '/helloworld.php',
 				DOCUMENT_ROOT: '/tmp',
 				SERVER_PROTOCOL: 'HTTP/1.1',
 				GATEWAY_INTERFACE: 'CGI/1.1',
+				REMOTE_ADDR: '127.0.0.1',
+				REMOTE_PORT: 12345,
+				SERVER_ADDR: '127.0.0.1',
+				SERVER_PORT: 80,
+				SERVER_NAME: '127.0.0.1',
 				REDIRECT_STATUS: 200,
 			}, function(err, request){
 				assert.ifError(err);
 				request.stdout.on('data', function(data){
-					console.info(data);
+					console.info(data.toString('utf8'));
 				});
 				request.stderr.on('data', function(data){
-					console.info(data);
+					console.info(data.toString('utf8'));
 				});
 				request.stdout.on('end', function(){
 					console.info(request.getExitStatus());
 					done();
 				});
-				request.stdin.end(new Buffer(0));
+				request.stdin.end();
 			});
 		});
 	});
