@@ -1,5 +1,5 @@
 {
-	"name": "node-fastcgi-client",
+	"name": "fastcgi-client",
 	"description": "A FastCGI client implementation in Node.js, mainly designed for cummunication with PHP.",
 	"author": "LastLeaf <bqfu@163.com>",
 	"repository": "git@github.com/LastLeaf/node-fastcgi-client.git",

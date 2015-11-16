@@ -8,7 +8,7 @@ Developing. Would be stable soon.
 
 # API
 
-`npm install node-fastcgi-client`. Use `require('node-fastcgi-client')` to get a `fastcgiConnector`.
+`npm install fastcgi-client`. Use `require('fastcgi-client')` to get a `fastcgiConnector`.
 
 `var client = fastcgiConnector(options)` Create a FastCGI client. Available options:
 
