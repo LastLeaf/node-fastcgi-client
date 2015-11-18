@@ -20,8 +20,6 @@ describe('Open a PHP-CGI process as FastCGI server', function(){
 	var connectOptions = {
 		host: '127.0.0.1',
 		port: 9900,
-		maxConns: 1,
-		maxReqs: 1,
 		mpxsConns: 1,
 		skipCheckServer: true
 	};
@@ -36,7 +34,20 @@ describe('Open a PHP-CGI process as FastCGI server', function(){
 		requests.helloworld(client, done);
 	});
 
+	it('Execute PHP helloworld * 100', function(done){
+		this.timeout(10000);
+		var client = fcgiClient(connectOptions);
+		requests.helloworldBatch(100, client, done);
+	});
+
+	it('Execute PHP helloworld * 100 (With Delay)', function(done){
+		this.timeout(10000);
+		var client = fcgiClient(connectOptions);
+		requests.helloworldBatchWithDelay(100, 1, client, done);
+	});
+
 	it('Execute PHP helloworld * 100 (Series)', function(done){
+		this.timeout(10000);
 		var client = fcgiClient(connectOptions);
 		requests.helloworldBatchSeries(100, client, done);
 	});

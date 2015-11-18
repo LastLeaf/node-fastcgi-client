@@ -29,6 +29,7 @@ describe('Use 127.0.0.1:9000 as FastCGI server', function(){
 	});
 
 	it('Execute PHP helloworld * 100 (Series)', function(done){
+		this.timeout(10000);
 		var client = fcgiClient(connectOptions);
 		requests.helloworldBatchSeries(100, client, done);
 	});

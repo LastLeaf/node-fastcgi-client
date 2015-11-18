@@ -65,6 +65,31 @@ exports.helloworldBatch = function(times, client, done){
 	});
 };
 
+exports.helloworldBatchWithDelay = function(times, delay, client, done){
+	client.on('ready', function(){
+		var waitDone = times;
+		for(var i=0; i<times; i++) {
+			setTimeout(function(){
+				client.request(HELLOWORLD_PARAMS, function(err, request){
+					assert.ifError(err);
+					request.stdout.on('data', function(data){
+						var str = data.toString('utf8');
+						var body = str.split('\r\n\r\n', 2)[1];
+						assert.equal(body, 'Hello world!');
+					});
+					request.stderr.on('data', function(data){
+					});
+					request.stdout.on('end', function(){
+						assert.equal(request.getExitStatus(), 0);
+						if(!--waitDone) done();
+					});
+					request.stdin.end();
+				});
+			}, delay * i);
+		}
+	});
+};
+
 exports.helloworldBatchSeries = function(times, client, done){
 	client.on('ready', function(){
 		var next = function(){
