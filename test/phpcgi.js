@@ -21,6 +21,8 @@ describe('Open a PHP-CGI process as FastCGI server', function(){
 		host: '127.0.0.1',
 		port: 9900,
 		maxConns: 1,
+		maxReqs: 1,
+		mpxsConns: 1,
 		skipCheckServer: true
 	};
 

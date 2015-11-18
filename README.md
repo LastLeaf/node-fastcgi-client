@@ -14,7 +14,6 @@ Developing. Would be stable soon.
 
 * `host` The server name or IP, default to '127.0.0.1'.
 * `port` The server port, default to 9000.
-* `connectionTimeout` The timeout for network connection in milliseconds, default to 20000.
 * `skipCheckServer` Skip checking and getting options from the server.
 * `maxConns` The default value of maximum concurrent connections to the server.
 * `maxReqs` The default value of maximum concurrent requests to the server.
