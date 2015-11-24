@@ -22,7 +22,8 @@ Developing. Would be stable soon.
 * Event `error` An error occurred and returned as 1st argument of event handler.
 
 `client.request(params, cb)` Create a new request.
-An error object would be passed to `cb` as 1st argument on failed, otherwise a `request` argument is passed as 2nd argument.
+`params` Should be FastCGI params (key-value pairs).
+An error object would be passed to `cb` as 1st argument on failed (request not sent at all), otherwise a `request` argument is passed as 2nd argument.
 
 The `request` object:
 
