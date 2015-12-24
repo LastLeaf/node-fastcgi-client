@@ -14,7 +14,7 @@ Developing. Would be stable soon.
 
 * `host` The server name or IP, default to '127.0.0.1'.
 * `port` The server port, default to 9000.
-* `sock_path` Connect to php-fpm with sock file instead of 127.0.0.1:9000. If you set this option, `host` and `port` will be ignored
+* `sockFile` Connect to php-fpm with sock file instead of 127.0.0.1:9000. If you set this option, `host` and `port` will be ignored
 * `skipCheckServer` Skip checking and getting options from the server.
 * `maxConns` The default value of maximum concurrent connections to the server.
 * `maxReqs` The default value of maximum concurrent requests to the server.
