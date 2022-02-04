@@ -7,6 +7,8 @@ interface IClientOptions {
   sockFile: string
   maxConns: number
   maxReqs: number
+  mpxsConns: number
+  skipCheckServer: boolean
 }
 
 interface IRequestOptions {
