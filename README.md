@@ -4,7 +4,11 @@ A FastCGI client implementation in Node.js, mainly designed for cummunication wi
 
 # Development Status
 
-Developing. Would be stable soon.
+Not actively developing, and I have been away from PHP projects since 2018.
+
+However, there are still some issues and pull requests from many developers, so I decide not to archive this repo.
+
+Also, I believe it is a small and stable protocol, and it can still work for many years.
 
 # API
 
