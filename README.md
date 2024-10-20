@@ -1,6 +1,6 @@
 # node-fastcgi-client
 
-A FastCGI client implementation in Node.js, mainly designed for cummunication with PHP.
+A FastCGI client implementation in Node.js, mainly designed for communication with PHP.
 
 # Development Status
 
